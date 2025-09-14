@@ -32,7 +32,6 @@ export const ExternalScripts = () => {
       })
       .catch(console.error);
 
-    // Load Swiper
     loadScript('https://unpkg.com/swiper@8/swiper-bundle.min.js')
       .then(() => {
         if (typeof window !== 'undefined' && (window as any).Swiper) {
