@@ -54,20 +54,20 @@ const Features = () => {
 
   return (
     <div className="default-section is-light-grey">
-      <div className="global-wrapper">
-        <div className="global-headline-div">
-          <div className="max-width _50">
-            <h2 className="global-headline-l">... und vereint auch Hebel außerhalb des Werbekontos.</h2>
-          </div>
-          <div className="global-subline-div _1">
-            <div className="max-width _35">
-              <p className="copytext">Für exzellente Ergebnisse muss alles ineinandergreifen. Lückenloses 3rd-Party Tracking, durchdachte Creatives, konvertierende Landing-Pages und eigene Datenfeeds - wir kümmern uns als Google Ads Agentur um alles Nötige damit deine <a href="/google-ads-agentur">Google Ads</a> fliegen.</p>
+          <div className="global-wrapper">
+            <div className="global-headline-div">
+              <div className="max-width _50">
+                <h2 className="global-headline-l">... und vereint auch Hebel außerhalb des Werbekontos.</h2>
+              </div>
+              <div className="global-subline-div _1">
+                <div className="max-width _35">
+                  <p className="copytext">Für exzellente Ergebnisse muss alles ineinandergreifen. Lückenloses 3rd-Party Tracking, durchdachte Creatives, konvertierende Landing-Pages und eigene Datenfeeds - wir kümmern uns als Google Ads Agentur um alles Nötige damit deine <a href="/google-ads-agentur">Google Ads</a> fliegen.</p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="global-content-div">
-          <div className="max-width _45">
-            <div className="align-vertically">
+            <div className="global-content-div">
+              <div className="max-width _45">
+                <div className="align-vertically">
               {features.map((feature, index) => {
                 const isOpen = openFeature === feature.id;
                 return (
@@ -79,7 +79,8 @@ const Features = () => {
                         transform: 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
                         transformStyle: 'preserve-3d',
                         opacity: 1,
-                        filter: 'blur(0px)'
+                        filter: 'blur(0px)',
+                        transition: 'all 0.3s ease'
                       }} 
                       className="box _w-100 is-pointer is-light-blue"
                       onClick={() => handleFeatureClick(feature.id)}
@@ -92,11 +93,17 @@ const Features = () => {
                                 <div className="section-layer-1">
                                   <img src={feature.icon} loading="lazy" alt="" className="icon" />
                                 </div>
-                                <div style={{opacity: isOpen ? 1 : 0}} className="section-layer-2">
+                                <div style={{
+                                  opacity: isOpen ? 1 : 0,
+                                  transition: 'opacity 0.3s ease'
+                                }} className="section-layer-2">
                                   <img src={feature.iconHover} loading="lazy" alt="" className="icon" />
                                 </div>
                               </div>
-                              <h2 style={{color: isOpen ? 'rgb(251, 251, 251)' : 'rgb(1,21,92)'}} className="global-headline-xxs is-left-aligned is-navy">
+                              <h2 style={{
+                                color: isOpen ? 'rgb(251, 251, 251)' : 'rgb(1,21,92)',
+                                transition: 'color 0.3s ease'
+                              }} className="global-headline-xxs is-left-aligned is-navy">
                                 <span dir="auto" style={{verticalAlign: 'inherit'}}>
                                   <span dir="auto" style={{verticalAlign: 'inherit'}}>{feature.title}</span>
                                 </span>
@@ -106,12 +113,14 @@ const Features = () => {
                               <div style={{
                                 backgroundColor: isOpen ? 'rgb(251, 251, 251)' : 'rgb(1,21,92)',
                                 transform: isOpen ? 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(180deg) skew(0deg, 0deg)' : 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
-                                transformStyle: 'preserve-3d'
+                                transformStyle: 'preserve-3d',
+                                transition: 'all 0.3s ease'
                               }} className="faq-icon-line-1"></div>
                               <div style={{
                                 backgroundColor: isOpen ? 'rgb(251, 251, 251)' : 'rgb(1,21,92)',
                                 transform: isOpen ? 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)' : 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
-                                transformStyle: 'preserve-3d'
+                                transformStyle: 'preserve-3d',
+                                transition: 'all 0.3s ease'
                               }} className="faq-icon-line-2"></div>
                             </div>
                           </div>
@@ -119,10 +128,14 @@ const Features = () => {
                             transform: isOpen ? 'translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)' : 'translate3d(0, 100%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)',
                             transformStyle: 'preserve-3d',
                             opacity: isOpen ? 1 : 0,
-                            width: isOpen ? '387.569px' : 'auto',
-                            height: isOpen ? 'auto' : '0px'
+                            height: isOpen ? 'auto' : '0px',
+                            overflow: 'hidden',
+                            transition: 'all 0.4s ease'
                           }} className="global-subline-div">
-                            <p style={{color: isOpen ? 'rgb(251, 251, 251)' : 'rgb(1,21,92)'}} className="copytext is-left-aligned is-navy">
+                            <p style={{
+                              color: isOpen ? 'rgb(251, 251, 251)' : 'rgb(1,21,92)',
+                              transition: 'color 0.3s ease'
+                            }} className="copytext is-left-aligned is-navy">
                               <br/>
                               <span dir="auto" style={{verticalAlign: 'inherit'}}>
                                 <span dir="auto" style={{verticalAlign: 'inherit'}}>{feature.description}</span>
@@ -135,10 +148,10 @@ const Features = () => {
                   </div>
                 );
               })}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
     </div>
   )
 }
