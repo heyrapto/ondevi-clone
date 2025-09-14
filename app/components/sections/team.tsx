@@ -1,4 +1,26 @@
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 const Team = () => {
+    
+
+    gsap.from(".cms-item", {
+        scrollTrigger: {
+            trigger: ".grid",
+            start: "top 70%",
+            toggleActions: "play none none none",
+        },
+        opacity: 0,
+        scale: 0.9,
+        filter: "blur(5px)", // Startwert
+        duration: 0.6,
+        stagger: {
+            amount: 0.6,
+            from: "start"
+        },
+        ease: "power2.out"
+    });
+    
   return (
     <div className="default-section">
           <div className="vw-desktop">
