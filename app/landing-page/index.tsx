@@ -11,7 +11,6 @@ import Insights from "~/components/sections/insights";
 import Presentation from "~/components/sections/presentation";
 import Steps from "~/components/sections/steps";
 import Team from "~/components/sections/team";
-import Testimonials from "~/components/sections/testimonials";
 
 export function LandingPage() {
   return (
@@ -28,7 +27,6 @@ export function LandingPage() {
       <Steps />
       <CTA />
       <Footer />
-
       <CookieBanner />
     </main>
   )
