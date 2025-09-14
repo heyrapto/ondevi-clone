@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const features = [
   {
     id: 1,
@@ -44,6 +46,12 @@ const features = [
 ];
 
 const Features = () => {
+  const [openFeature, setOpenFeature] = useState<number | null>(null);
+
+  const handleFeatureClick = (featureId: number) => {
+    setOpenFeature(openFeature === featureId ? null : featureId);
+  };
+
   return (
     <div className="default-section is-light-grey">
       <div className="global-wrapper">
@@ -60,45 +68,73 @@ const Features = () => {
         <div className="global-content-div">
           <div className="max-width _45">
             <div className="align-vertically">
-              {features.map((feature, index) => (
-                <div key={feature.id} className="slide_in_animation global-subline-div _1">
-                  <div data-w-id={`feature-${feature.id}`} style={{backgroundColor: 'rgb(239,241,255)'}} className="box _w-100 is-pointer is-light-blue">
-                    <div className="padding _2">
-                      <div className="align-vertically">
-                        <div className="align-horizontally g-1 _w-100">
-                          <div className="align-horizontally g-0-5 mobile-break-left">
-                            <div className="section-layer-div _w-auto">
-                              <div className="section-layer-1">
-                                <img src={feature.icon} loading="lazy" alt="" className="icon" />
+              {features.map((feature, index) => {
+                const isOpen = openFeature === feature.id;
+                return (
+                  <div key={feature.id} className="slide_in_animation global-subline-div _1">
+                    <div 
+                      data-w-id={`feature-${feature.id}`} 
+                      style={{
+                        backgroundColor: isOpen ? 'rgb(1, 21, 92)' : 'rgb(239,241,255)',
+                        transform: 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+                        transformStyle: 'preserve-3d',
+                        opacity: 1,
+                        filter: 'blur(0px)'
+                      }} 
+                      className="box _w-100 is-pointer is-light-blue"
+                      onClick={() => handleFeatureClick(feature.id)}
+                    >
+                      <div className="padding _2">
+                        <div className="align-vertically">
+                          <div className="align-horizontally g-1 _w-100">
+                            <div className="align-horizontally g-0-5 mobile-break-left">
+                              <div className="section-layer-div _w-auto">
+                                <div className="section-layer-1">
+                                  <img src={feature.icon} loading="lazy" alt="" className="icon" />
+                                </div>
+                                <div style={{opacity: isOpen ? 1 : 0}} className="section-layer-2">
+                                  <img src={feature.iconHover} loading="lazy" alt="" className="icon" />
+                                </div>
                               </div>
-                              <div style={{opacity: 0}} className="section-layer-2">
-                                <img src={feature.iconHover} loading="lazy" alt="" className="icon" />
-                              </div>
+                              <h2 style={{color: isOpen ? 'rgb(251, 251, 251)' : 'rgb(1,21,92)'}} className="global-headline-xxs is-left-aligned is-navy">
+                                <span dir="auto" style={{verticalAlign: 'inherit'}}>
+                                  <span dir="auto" style={{verticalAlign: 'inherit'}}>{feature.title}</span>
+                                </span>
+                              </h2>
                             </div>
-                            <h2 style={{color: 'rgb(1,21,92)'}} className="global-headline-xxs is-left-aligned is-navy">{feature.title}</h2>
+                            <div className="faq-icon-div">
+                              <div style={{
+                                backgroundColor: isOpen ? 'rgb(251, 251, 251)' : 'rgb(1,21,92)',
+                                transform: isOpen ? 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(180deg) skew(0deg, 0deg)' : 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+                                transformStyle: 'preserve-3d'
+                              }} className="faq-icon-line-1"></div>
+                              <div style={{
+                                backgroundColor: isOpen ? 'rgb(251, 251, 251)' : 'rgb(1,21,92)',
+                                transform: isOpen ? 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(90deg) skew(0deg, 0deg)' : 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
+                                transformStyle: 'preserve-3d'
+                              }} className="faq-icon-line-2"></div>
+                            </div>
                           </div>
-                          <div className="faq-icon-div">
-                            <div style={{backgroundColor: 'rgb(1,21,92)'}} className="faq-icon-line-1"></div>
-                            <div style={{backgroundColor: 'rgb(1,21,92)'}} className="faq-icon-line-2"></div>
+                          <div style={{
+                            transform: isOpen ? 'translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)' : 'translate3d(0, 100%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)',
+                            transformStyle: 'preserve-3d',
+                            opacity: isOpen ? 1 : 0,
+                            width: isOpen ? '387.569px' : 'auto',
+                            height: isOpen ? 'auto' : '0px'
+                          }} className="global-subline-div">
+                            <p style={{color: isOpen ? 'rgb(251, 251, 251)' : 'rgb(1,21,92)'}} className="copytext is-left-aligned is-navy">
+                              <br/>
+                              <span dir="auto" style={{verticalAlign: 'inherit'}}>
+                                <span dir="auto" style={{verticalAlign: 'inherit'}}>{feature.description}</span>
+                              </span>
+                            </p>
                           </div>
-                        </div>
-                        <div style={{
-                          WebkitTransform: 'translate3d(0, 100%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)',
-                          MozTransform: 'translate3d(0, 100%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)',
-                          msTransform: 'translate3d(0, 100%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)',
-                          transform: 'translate3d(0, 100%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)',
-                          opacity: 0,
-                          height: '0px'
-                        }} className="global-subline-div">
-                          <p style={{color: 'rgb(1,21,92)'}} className="copytext is-left-aligned is-navy">
-                            <br/>{feature.description}
-                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

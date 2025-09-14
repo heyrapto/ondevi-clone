@@ -1,6 +1,9 @@
 import Footer from "~/components/layout/footer";
+import { Head } from "~/components/layout/head";
 import Navbar from "~/components/layout/navbar";
 import { CookieBanner } from "~/components/modal/cookie-banner";
+import { CookieConsentScripts } from "~/components/scripts/cookie-consent";
+import { ExternalScripts } from "~/components/scripts/external-scripts";
 import Ads from "~/components/sections/ads";
 import Brand from "~/components/sections/brand";
 import Chat from "~/components/sections/chat";
@@ -15,22 +18,27 @@ import LenisReact from "lenis/react";
 
 export function LandingPage() {
   return (
-    <LenisReact root>
-      <div className="global-body">
-      <Navbar />
-      <Hero />
-      <Brand />
-      <Team />
-      <Presentation />
-      <Features />
-      <Chat />
-      <Insights />
-      <Ads />
-      <Steps />
-      <CTA />
-      <Footer />
-      <CookieBanner />
-      </div>
-    </LenisReact>
+    <>
+      <Head />
+      <LenisReact root>
+        <div className="global-body">
+          <ExternalScripts />
+          <CookieConsentScripts />
+          <Navbar />
+          <Hero />
+          <Brand />
+          <Team />
+          <Presentation />
+          <Features />
+          <Chat />
+          <Insights />
+          <Ads />
+          <Steps />
+          <CTA />
+          <Footer />
+          <CookieBanner />
+        </div>
+      </LenisReact>
+    </>
   )
 }

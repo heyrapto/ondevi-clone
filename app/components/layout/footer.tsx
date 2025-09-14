@@ -32,7 +32,25 @@ const Footer = () => {
                 <div className="line light"></div>
                 <div className="global-subline-div _05">
                   <div className="footer-link-list custom-break">
-                    {/* Footer links would go here */}
+                    <a href="/google-ads-agentur-muenchen" className="footer-url small">Google Ads Agentur München</a>
+                    <a href="/google-ads-agentur-berlin" className="footer-url small">Google Ads Agentur Berlin</a>
+                    <a href="/google-ads-agentur-hamburg" className="footer-url small">Google Ads Agentur Hamburg</a>
+                    <a href="/google-ads-agentur-braunschweig" className="footer-url small">Google Ads Agentur Braunschweig</a>
+                    <a href="/google-ads-agentur-frankfurt" className="footer-url small">Google Ads Agentur Frankfurt</a>
+                    <a href="/google-ads-agentur-duesseldorf" className="footer-url small">Google Ads Agentur Düsseldorf</a>
+                    <a href="/google-ads-agentur-nuernberg" className="footer-url small">Google Ads Agentur Nürnberg</a>
+                    <a href="/google-ads-agentur-offenburg" className="footer-url small">Google Ads Agentur Offenburg</a>
+                    <a href="/google-ads-agentur-koeln" className="footer-url small">Google Ads Agentur Köln</a>
+                    <a href="/google-ads-agentur-stuttgart" className="footer-url small">Google Ads Agentur Stuttgart</a>
+                    <a href="/google-ads-agentur-bremen" className="footer-url small">Google Ads Agentur Bremen</a>
+                    <a href="/google-ads-agentur-heidelberg" className="footer-url small">Google Ads Agentur Heidelberg</a>
+                    <a href="/google-shopping-agentur" className="footer-url small">Google Shopping Agentur</a>
+                    <a href="/google-ads-agentur" className="footer-url small">Google-Ads-Agentur</a>
+                    <a href="/sea-agentur" className="footer-url small">SEA Agentur</a>
+                    <a href="/bing-agentur" className="footer-url small">Bing Agentur</a>
+                    <a href="/klaviyo-agentur" className="footer-url small">Klaviyo Agentur</a>
+                    <a href="/email-marketing-agentur" className="footer-url small">E-Mail Marketing</a>
+                    <a href="https://ondevi.com/events/das-e-commerce-spitzentreffen" className="footer-url small">E-Commerce Spitzentreffen 16.09.2025</a>
                   </div>
                 </div>
               </div>

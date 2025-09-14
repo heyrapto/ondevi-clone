@@ -53,9 +53,9 @@ const Team = () => {
         import('gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
           gsap.registerPlugin(ScrollTrigger);
           
-          gsap.from(".cms-item", {
+          gsap.from(".cms-item_team", {
             scrollTrigger: {
-              trigger: ".grid",
+              trigger: ".swiper-wrapper",
               start: "top 70%",
               toggleActions: "play none none none",
             },
