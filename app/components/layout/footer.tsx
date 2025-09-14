@@ -1,3 +1,68 @@
+const footerData = {
+  company: {
+    logo: "https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/680797fe17c908d6a6cc15bb_logo_light.svg",
+    description: "Unsere Vision ist es die Nr. 1 Google Ads Agentur für E-Commerce zu werden."
+  },
+  linkSections: [
+    {
+      id: 1,
+      title: "Services",
+      links: [
+        { text: "Service 1", href: "#" },
+        { text: "Service 2", href: "#" },
+        { text: "Service 3", href: "#" }
+      ],
+      isHidden: true
+    },
+    {
+      id: 2,
+      title: "Unternehmen",
+      links: [
+        { text: "Referenzen", href: "/referenzen" },
+        { text: "Über uns", href: "/ueber-uns" },
+        { text: "Karriere", href: "/karriere" },
+        { text: "Kontakt", href: "/account-analyse" }
+      ],
+      isHidden: false
+    },
+    {
+      id: 3,
+      title: "Social Media",
+      links: [
+        { text: "LinkedIn", href: "https://www.linkedin.com/company/ondevi/", external: true },
+        { text: "Instagram", href: "https://www.instagram.com/ondevi/", external: true }
+      ],
+      isHidden: false
+    }
+  ],
+  locationLinks: [
+    { text: "Google Ads Agentur München", href: "/google-ads-agentur-muenchen" },
+    { text: "Google Ads Agentur Berlin", href: "/google-ads-agentur-berlin" },
+    { text: "Google Ads Agentur Hamburg", href: "/google-ads-agentur-hamburg" },
+    { text: "Google Ads Agentur Braunschweig", href: "/google-ads-agentur-braunschweig" },
+    { text: "Google Ads Agentur Frankfurt", href: "/google-ads-agentur-frankfurt" },
+    { text: "Google Ads Agentur Düsseldorf", href: "/google-ads-agentur-duesseldorf" },
+    { text: "Google Ads Agentur Nürnberg", href: "/google-ads-agentur-nuernberg" },
+    { text: "Google Ads Agentur Offenburg", href: "/google-ads-agentur-offenburg" },
+    { text: "Google Ads Agentur Köln", href: "/google-ads-agentur-koeln" },
+    { text: "Google Ads Agentur Stuttgart", href: "/google-ads-agentur-stuttgart" },
+    { text: "Google Ads Agentur Bremen", href: "/google-ads-agentur-bremen" },
+    { text: "Google Ads Agentur Heidelberg", href: "/google-ads-agentur-heidelberg" },
+    { text: "Google Shopping Agentur", href: "/google-shopping-agentur" },
+    { text: "Google-Ads-Agentur", href: "/google-ads-agentur" },
+    { text: "SEA Agentur", href: "/sea-agentur" },
+    { text: "Bing Agentur", href: "/bing-agentur" },
+    { text: "Klaviyo Agentur", href: "/klaviyo-agentur" },
+    { text: "E-Mail Marketing", href: "/email-marketing-agentur" },
+    { text: "E-Commerce Spitzentreffen 16.09.2025", href: "https://ondevi.com/events/das-e-commerce-spitzentreffen", external: true }
+  ],
+  legalLinks: [
+    { text: "Impressum", href: "/impressum" },
+    { text: "Datenschutz", href: "/datenschutz" },
+    { text: "AGB", href: "/agb" }
+  ]
+};
+
 const Footer = () => {
   return (
     <div className="footer">
@@ -5,52 +70,40 @@ const Footer = () => {
           <div className="footer-align-vertically">
             <div className="footer-row-1">
               <div className="footer-column _1st">
-                <img loading="lazy" src="https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/680797fe17c908d6a6cc15bb_logo_light.svg" alt="" className="footer-logo" />
-                <div className="copytext is-left-aligned is-white is-center-aligned-on-mobile">Unsere Vision ist es die Nr. 1 Google Ads Agentur für E-Commerce zu werden.</div>
+                <img loading="lazy" src={footerData.company.logo} alt="" className="footer-logo" />
+                <div className="copytext is-left-aligned is-white is-center-aligned-on-mobile">{footerData.company.description}</div>
               </div>
               <div className="footer-column _2nd">
-                <div className="footer-link-list is-hidden">
-                  <div className="footer-txt">Services</div>
-                  <a href="#" className="footer-url">Service 1</a>
-                  <a href="#" className="footer-url">Service 2</a>
-                  <a href="#" className="footer-url">Service 3</a>
-                </div>
-                <div className="footer-link-list">
-                  <div className="footer-txt">Unternehmen</div>
-                  <a href="/referenzen" className="footer-url">Referenzen</a>
-                  <a href="/ueber-uns" className="footer-url">Über uns</a>
-                  <a href="/karriere" className="footer-url">Karriere</a>
-                  <a href="/account-analyse" className="footer-url">Kontakt</a>
-                </div>
-                <div className="footer-link-list">
-                  <div className="footer-txt">Social Media</div>
-                  <a href="https://www.linkedin.com/company/ondevi/" target="_blank" rel="noopener noreferrer" className="footer-url">LinkedIn</a>
-                  <a href="https://www.instagram.com/ondevi/" target="_blank" rel="noopener noreferrer" className="footer-url">Instagram</a>
-                </div>
+                {footerData.linkSections.map((section) => (
+                  <div key={section.id} className={`footer-link-list ${section.isHidden ? 'is-hidden' : ''}`}>
+                    <div className="footer-txt">{section.title}</div>
+                    {section.links.map((link, index) => (
+                      <a 
+                        key={index} 
+                        href={link.href} 
+                        className="footer-url"
+                        {...((link as any).external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      >
+                        {link.text}
+                      </a>
+                    ))}
+                  </div>
+                ))}
               </div>
               <div className="footer-column _3rd">
                 <div className="line light"></div>
                 <div className="global-subline-div _05">
                   <div className="footer-link-list custom-break">
-                    <a href="/google-ads-agentur-muenchen" className="footer-url small">Google Ads Agentur München</a>
-                    <a href="/google-ads-agentur-berlin" className="footer-url small">Google Ads Agentur Berlin</a>
-                    <a href="/google-ads-agentur-hamburg" className="footer-url small">Google Ads Agentur Hamburg</a>
-                    <a href="/google-ads-agentur-braunschweig" className="footer-url small">Google Ads Agentur Braunschweig</a>
-                    <a href="/google-ads-agentur-frankfurt" className="footer-url small">Google Ads Agentur Frankfurt</a>
-                    <a href="/google-ads-agentur-duesseldorf" className="footer-url small">Google Ads Agentur Düsseldorf</a>
-                    <a href="/google-ads-agentur-nuernberg" className="footer-url small">Google Ads Agentur Nürnberg</a>
-                    <a href="/google-ads-agentur-offenburg" className="footer-url small">Google Ads Agentur Offenburg</a>
-                    <a href="/google-ads-agentur-koeln" className="footer-url small">Google Ads Agentur Köln</a>
-                    <a href="/google-ads-agentur-stuttgart" className="footer-url small">Google Ads Agentur Stuttgart</a>
-                    <a href="/google-ads-agentur-bremen" className="footer-url small">Google Ads Agentur Bremen</a>
-                    <a href="/google-ads-agentur-heidelberg" className="footer-url small">Google Ads Agentur Heidelberg</a>
-                    <a href="/google-shopping-agentur" className="footer-url small">Google Shopping Agentur</a>
-                    <a href="/google-ads-agentur" className="footer-url small">Google-Ads-Agentur</a>
-                    <a href="/sea-agentur" className="footer-url small">SEA Agentur</a>
-                    <a href="/bing-agentur" className="footer-url small">Bing Agentur</a>
-                    <a href="/klaviyo-agentur" className="footer-url small">Klaviyo Agentur</a>
-                    <a href="/email-marketing-agentur" className="footer-url small">E-Mail Marketing</a>
-                    <a href="https://ondevi.com/events/das-e-commerce-spitzentreffen" className="footer-url small">E-Commerce Spitzentreffen 16.09.2025</a>
+                    {footerData.locationLinks.map((link, index) => (
+                      <a 
+                        key={index} 
+                        href={link.href} 
+                        className="footer-url small"
+                        {...((link as any).external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      >
+                        {link.text}
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -59,9 +112,9 @@ const Footer = () => {
               <div className="footer-align-horizontally is-strechted is-vertically-aligned-on-mobile">
                 <div className="footer-url">© 2025 | ondevi</div>
                 <div className="footer-align-horizontally g-2 align-vertically-on-mobile">
-                  <a href="/impressum" className="footer-url">Impressum</a>
-                  <a href="/datenschutz" className="footer-url">Datenschutz</a>
-                  <a href="/agb" className="footer-url">AGB</a>
+                  {footerData.legalLinks.map((link, index) => (
+                    <a key={index} href={link.href} className="footer-url">{link.text}</a>
+                  ))}
                 </div>
               </div>
             </div>

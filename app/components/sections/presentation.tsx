@@ -1,27 +1,23 @@
+const labels = [
+  { id: 1, text: "Search" },
+  { id: 2, text: "pMax" },
+  { id: 3, text: "Shopping" },
+  { id: 4, text: "YouTube" },
+  { id: 5, text: "Demand Gen" },
+  { id: 6, text: "Display" }
+];
+
 const Presentation = () => {
   return (
     <div className="default-section">
           <div className="global-wrapper">
             <div className="global-headline-div">
               <div className="align-horizontally g-0-5 mobile-break">
-                <div className="label">
-                  <div className="label-txt">Search</div>
-                </div>
-                <div className="label">
-                  <div className="label-txt">pMax</div>
-                </div>
-                <div className="label">
-                  <div className="label-txt">Shopping</div>
-                </div>
-                <div className="label">
-                  <div className="label-txt">YouTube</div>
-                </div>
-                <div className="label">
-                  <div className="label-txt">Demand Gen</div>
-                </div>
-                <div className="label">
-                  <div className="label-txt">Display</div>
-                </div>
+                {labels.map((label) => (
+                  <div key={label.id} className="label">
+                    <div className="label-txt">{label.text}</div>
+                  </div>
+                ))}
               </div>
               <div className="max-width _45">
                 <div className="global-subline-div _1">

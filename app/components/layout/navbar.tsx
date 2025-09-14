@@ -1,3 +1,30 @@
+const navbarData = {
+  logo: {
+    src: "https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/680797fd9d39d73a2bfcdcf0_logo.svg",
+    alt: "logo"
+  },
+  navItems: [
+    { id: 1, text: "References", href: "/referenzen", type: "link" },
+    { id: 2, text: "About Us", href: "/ueber-uns", type: "link" },
+    { id: 3, text: "career", href: "/karriere", type: "link" },
+    { id: 4, text: "Blog", href: "/ressourcen/blog", type: "link" },
+    { 
+      id: 5, 
+      text: "resources", 
+      type: "dropdown",
+      icon: "https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/680794a92c0d51ed197aec3b_right.png",
+      dropdownItems: [
+        { text: "magazine", href: "/ressourcen/blog" },
+        { text: "White paper", href: "/ressourcen/whitepaper" },
+        { text: "Events", href: "/ressourcen/events" }
+      ],
+      isHidden: true
+    },
+    { id: 6, text: "contact", href: "/kontakt", type: "link" },
+    { id: 7, text: "Get account analysis", href: "/account-analyse", type: "button" }
+  ]
+};
+
 const Navbar = () => {
     return (
         <div className="nav" >
@@ -5,104 +32,76 @@ const Navbar = () => {
                 <div className="nav-outer">
                     <div className="nav-inner">
                         <a href="/" aria-current="page" className="nav-log-div w-nav-brand w--current" aria-label="home">
-                            <img loading="eager" src="https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/680797fd9d39d73a2bfcdcf0_logo.svg" alt="logo" className="nav-logo" />
+                            <img loading="eager" src={navbarData.logo.src} alt={navbarData.logo.alt} className="nav-logo" />
                             </a>
                             <nav role="navigation" className="nav-menu-div w-nav-menu">
                             <ul role="list" className="nav-menu-right w-list-unstyled">
-                                <li className="nav-item">
-                                    <a href="/referenzen" className="nav-link">
-                                        <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                        >
-                                            <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                            >References</span>
+                                {navbarData.navItems.map((item) => (
+                                  <li key={item.id} className={`nav-item ${item.isHidden ? 'hide' : ''}`}>
+                                    {item.type === 'link' && (
+                                      <a href={item.href} className="nav-link">
+                                        <span dir="auto" style={{ verticalAlign: "inherit" }}>
+                                          <span dir="auto" style={{ verticalAlign: "inherit" }}>
+                                            {item.text}
+                                          </span>
                                         </span>
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="/ueber-uns" className="nav-link">
-                                        <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                        >
-                                            <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                            >About Us</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="/karriere" className="nav-link">
-                                        <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                        >
-                                            <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                            >career</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="/ressourcen/blog" className="nav-link">
-                                        <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                        >
-                                            <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                            >Blog</span>
-                                        </span>
-                                    </a>
-                                </li>
-                                <li className="nav-item hide">
-                                    <div data-w-id="c291f742-80df-aba7-8061-ecc765f8e6c4" className="dropdown-trigger">
-                                        <div className="nav-txt">
-                                            <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                            >
-                                                <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                                >resources</span>
+                                      </a>
+                                    )}
+                                    
+                                    {item.type === 'dropdown' && (
+                                      <>
+                                        <div data-w-id="c291f742-80df-aba7-8061-ecc765f8e6c4" className="dropdown-trigger">
+                                          <div className="nav-txt">
+                                            <span dir="auto" style={{ verticalAlign: "inherit" }}>
+                                              <span dir="auto" style={{ verticalAlign: "inherit" }}>
+                                                {item.text}
+                                              </span>
                                             </span>
+                                          </div>
+                                          <img 
+                                            loading="lazy" 
+                                            src={item.icon} 
+                                            alt="" 
+                                            className="nav-link-icon" 
+                                            style={{ transform: "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg), transformStyle: preserve-3d" }} 
+                                          />
                                         </div>
-                                        <img loading="lazy" src="https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/680794a92c0d51ed197aec3b_right.png" alt="" className="nav-link-icon" 
-                                        style={{ transform: "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg), transformStyle: preserve-3d" }} />
-                                    </div>
-                                    <div className="dropdown-1" style={{display: "none"}}><a href="/ressourcen/blog" className="nav-link-dropdown">
-                                        <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                        ><span dir="auto" style={{ verticalAlign: "inherit" }}
->magazine</span>
-                                        </span>
-                                    </a>
-                                    <a href="/ressourcen/whitepaper" className="nav-link-dropdown">
-                                    <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                    >
-                                        <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                        >White paper</span></span></a>
-                                        <a href="/ressourcen/events" className="nav-link-dropdown">
-                                            <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                            >
-                                                <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                                >Events</span>
+                                        <div className="dropdown-1" style={{display: "none"}}>
+                                          {item.dropdownItems?.map((dropdownItem, index) => (
+                                            <a key={index} href={dropdownItem.href} className="nav-link-dropdown">
+                                              <span dir="auto" style={{ verticalAlign: "inherit" }}>
+                                                <span dir="auto" style={{ verticalAlign: "inherit" }}>
+                                                  {dropdownItem.text}
+                                                </span>
+                                              </span>
+                                            </a>
+                                          ))}
+                                        </div>
+                                      </>
+                                    )}
+                                    
+                                    {item.type === 'button' && (
+                                      <a href={item.href} className="primary-btn w-inline-block">
+                                        <div className="btn-txt-div">
+                                          <div className="btn-txt">
+                                            <span dir="auto" style={{ verticalAlign: "inherit" }}>
+                                              <span dir="auto" style={{ verticalAlign: "inherit" }}>
+                                                {item.text}
+                                              </span>
                                             </span>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li className="nav-item"><a href="/kontakt" className="nav-link">
-                                    <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                    >
-                                        <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                        >contact</span></span></a></li><li className="nav-item"><a href="/account-analyse" className="primary-btn w-inline-block">
-                                            <div className="btn-txt-div">
-                                                <div className="btn-txt">
-                                                    <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                                    >
-                                                        <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                                        >Get account analysis
-                                                            </span>
-                                                            </span>
-                                                        </div>
-                                                        <div className="btn-txt" >
-                                                    <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                                    >
-                                                        <span dir="auto" style={{ verticalAlign: "inherit" }}
-                                                        >Get account analysis
-
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                </li>
+                                          </div>
+                                          <div className="btn-txt">
+                                            <span dir="auto" style={{ verticalAlign: "inherit" }}>
+                                              <span dir="auto" style={{ verticalAlign: "inherit" }}>
+                                                {item.text}
+                                              </span>
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </a>
+                                    )}
+                                  </li>
+                                ))}
                             </ul>
                         </nav>
                         <div id="w-node-c291f742-80df-aba7-8061-ecc765f8e6dc-65f8e6ba" className="nav-btn-div">
