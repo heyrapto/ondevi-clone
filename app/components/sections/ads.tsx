@@ -96,7 +96,7 @@ const Ads = () => {
           <div className="swiper swiper1 w-dyn-list">
             <div role="list" className="swiper-wrapper w-dyn-items">
               {caseStudies.map((caseStudy) => (
-                <div key={caseStudy.id} role="listitem" className="swiper-slide w-dyn-item">
+                <div key={caseStudy.id} role="listitem" className="swiper-slide w-dyn-item" style={{ marginRight: "20px" }}>
                   <a href={caseStudy.link} className="case-item-large w-inline-block">
                     <div className="section-layer-div">
                       <div className="section-layer-1">
@@ -151,6 +151,20 @@ const Ads = () => {
                 </div>
               ))}
             </div>
+            <div className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+              {caseStudies.map((_, index) => (
+                <span 
+                  key={index} 
+                  className={`swiper-pagination-bullet ${index === 0 ? 'swiper-pagination-bullet-active' : ''}`} 
+                  tabIndex={0} 
+                  role="button" 
+                  aria-label={`Go to slide ${index + 1}`}
+                  aria-current={index === 0 ? 'true' : undefined}
+                />
+              ))}
+            </div>
+            <div className="swiper-arrow button-prev" tabIndex={0} role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-546309509b0bf5ef"></div>
+            <div className="swiper-arrow button-next" tabIndex={0} role="button" aria-label="Next slide" aria-controls="swiper-wrapper-546309509b0bf5ef"></div>
           </div>
           <div className="global-subline-div _3">
             <a href="/referenzen" className="primary-btn is-black _w-auto pageload w-inline-block">
