@@ -11,10 +11,12 @@ import Insights from "~/components/sections/insights";
 import Presentation from "~/components/sections/presentation";
 import Steps from "~/components/sections/steps";
 import Team from "~/components/sections/team";
+import LenisReact from "lenis/react";
 
 export function LandingPage() {
   return (
-    <main className="global-body">
+    <LenisReact root>
+      <div className="global-body">
       <Navbar />
       <Hero />
       <Brand />
@@ -28,6 +30,7 @@ export function LandingPage() {
       <CTA />
       <Footer />
       <CookieBanner />
-    </main>
+      </div>
+    </LenisReact>
   )
 }
