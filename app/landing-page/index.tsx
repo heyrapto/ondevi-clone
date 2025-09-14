@@ -14,18 +14,25 @@ import Testimonials from "~/components/sections/testimonials";
 
 export function LandingPage() {
   return (
-    <main>
+    <main className="global-body">
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-NTK84C6"
+          height="0"
+          width="0"
+          style={{ display: 'none', visibility: 'hidden' }}
+        ></iframe>
+      </noscript>
+      
       <Navbar />
       <Hero />
       <Brand />
       <Team />
-      <Chat />
-      <Insights />
       <Presentation />
       <Features />
-      <Steps />
+      <Chat />
+      <Insights />
       <Ads />
-      <Testimonials />
       <Steps />
       <CTA />
       <Footer />
