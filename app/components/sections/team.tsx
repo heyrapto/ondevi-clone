@@ -59,13 +59,28 @@ const Team = () => {
               <div className="section-layer-1 is-relative">
                 <div className="max-width _90">
                   <DotLottiePlayer
+                    data-animation-type="lottie"
                     src="https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/68405e9ce713fe96af235272_Ondevi%20Team%20Section%201080%2060fps_2.lottie"
+                    data-default-src="https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/68405e9ce713fe96af235272_Ondevi%20Team%20Section%201080%2060fps_2.lottie"
+                    data-default-duration="0"
+                    data-duration="0"
+                    data-renderer="canvas"
+                    data-loop="1"
+                    data-autoplay="0"
+                    data-state="playing"
                     background="transparent"
+                    className="lottie"
+                    data-preserve-aspect-ratio="xMidYMid slice"
+                    data-is-ix2-target="1"
+                    data-w-id="3d32f347-faca-63d9-5a57-93ec78c2c77f"
+                    loading="lazy"
                     speed="1"
                     loop
                     autoplay
-                    style={{ width: "100%", height: "auto" }}
+                    data-direction="1"
+                    style={{ overflow: "hidden" }}
                   />
+                 <canvas width="2400" height="1375" style={{width: "100%", height: "100%", transformOrigin: "0px 0px 0px", contentVisibility: "visible"}}></canvas>
                 </div>
               </div>
               <div className="section-layer-2 is-absolute" style={{ willChange: "opacity", opacity: 0 }}>

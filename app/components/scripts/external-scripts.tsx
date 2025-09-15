@@ -74,11 +74,18 @@ export const ExternalScripts = () => {
       })
       .catch(console.error);
 
-    // DotLottie web component for .lottie playback
-    loadScript('https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js')
+    // Webflow Lottie support
+    loadScript('https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/js/webflow.schunk.57d5559d2f0cd9f8.js')
+      .then(() => {
+        return loadScript('https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/js/webflow.schunk.012830ea5181d619.js');
+      })
+      .then(() => {
+        return loadScript('https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/js/webflow.697cc910.3d9bc34c22e4a7dc.js');
+      })
       .catch(console.error);
 
-    loadScript('https://cdn.jsdelivr.net/gh/athlonstudio/lottie-lazy-loader@latest/src/lottieLazyLoading.min.js')
+    // DotLottie web component for .lottie playback (needed when not relying on Webflow IX2)
+    loadScript('https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js')
       .catch(console.error);
 
   }, []);
