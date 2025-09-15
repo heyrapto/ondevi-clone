@@ -54,34 +54,35 @@ const Team = () => {
             <div data-w-id="5fbf0ed5-cc6e-91bd-66bb-0688207a21a3" className="animation-section">
               <div className="animation-section-inner">
                 <div className="section-layer-div">
-                  <div className="section-layer-1 is-relative">
-                    <div className="max-width _90">
-                      <div data-loading="lazy" data-preserve-aspect-ratio="xMidYMid slice" data-is-ix2-target="1" className="lottie" data-w-id="3d32f347-faca-63d9-5a57-93ec78c2c77f" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/68405e9ce713fe96af235272_Ondevi%20Team%20Section%201080%2060fps_2.lottie" data-loop="0" data-direction="1" data-autoplay="0" data-renderer="canvas" data-default-duration="0" data-duration="2.3833333333333333"></div>
-                    </div>
-                  </div>
-                  <div className="section-layer-2 is-absolute">
-                    <div className="global-wrapper h-100">
-                      <div className="align-vertically h-100 is-left-aligned">
-                        <div className="max-width _30">
-                          <div className="global-headline-s is-left-aligned is-grey">Wir glauben, dass <span className="is-black">Wachstum gemeinsam schneller</span> gelingt als allein</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="section-layer-3 is-absolute">
-                    <div className="global-wrapper h-100">
-                      <div className="align-vertically h-100">
-                        <div className="max-width _40">
-                          <h2 className="global-headline-s">Dein <span className="is-blue">Plug &amp; Play Team</span> als Wachstumsbeschleuniger</h2>
-                        </div>
-                        <div className="global-subline-div _1">
-                          <div className="max-width _35">
-                            <p className="copytext">Wir vereinen seniorige Spezialisten in einem interdisziplinären Growth Team, das sich reibungslos und ohne Koordinationsaufwand in deine Strukturen integriert.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="section-layer-1 is-relative">
+                                <div className="max-width _90">
+                                    <div data-loading="lazy" data-preserve-aspect-ratio="xMidYMid slice" data-is-ix2-target="1" className="lottie" data-w-id="3d32f347-faca-63d9-5a57-93ec78c2c77f" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/68405e9ce713fe96af235272_Ondevi%20Team%20Section%201080%2060fps_2.lottie" data-loop="1" data-direction="1" data-autoplay="0" data-renderer="canvas" data-default-duration="0" data-duration="0" data-default-src="https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/68405e9ce713fe96af235272_Ondevi%20Team%20Section%201080%2060fps_2.lottie" style={{overflow: "hidden"}} data-state="playing"><canvas width="2400" height="1375" style={{width: "100%", height: "100%", transformOrigin: "0px 0px 0px", contentVisibility: "visible"}}></canvas></div>
+                                </div>
+                            </div>
+                            <div className="section-layer-2 is-absolute" style={{ willChange: "opacity", opacity: 0 }}>
+                                <div className="global-wrapper h-100">
+                                    <div className="align-vertically h-100 is-left-aligned">
+                                        <div className="max-width _30">
+                                            <div className="global-headline-s is-left-aligned is-grey">Wir glauben, dass <span className="is-black">Wachstum gemeinsam schneller</span> gelingt als allein</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="section-layer-3 is-absolute" style={{ willChange: "opacity", opacity: 0.5377 }}>
+                                <div className="global-wrapper h-100">
+                                    <div className="align-vertically h-100">
+                                        <div className="max-width _40">
+                                            <h2 className="global-headline-s">Dein <span className="is-blue">Plug &amp; Play Team</span> als Wachstumsbeschleuniger</h2>
+                                        </div>
+                                        <div className="global-subline-div _1">
+                                            <div className="max-width _35">
+                                                <p className="copytext">Wir vereinen seniorige Spezialisten in einem interdisziplinären Growth Team, das sich reibungslos und ohne Koordinationsaufwand in deine Strukturen integriert.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                 </div>
               </div>
             </div>
