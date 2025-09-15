@@ -74,6 +74,10 @@ export const ExternalScripts = () => {
       })
       .catch(console.error);
 
+    // DotLottie web component for .lottie playback
+    loadScript('https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js')
+      .catch(console.error);
+
     loadScript('https://cdn.jsdelivr.net/gh/athlonstudio/lottie-lazy-loader@latest/src/lottieLazyLoading.min.js')
       .catch(console.error);
 

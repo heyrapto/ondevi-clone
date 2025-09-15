@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { gsap } from "gsap"
 
+const DotLottiePlayer = 'dotlottie-player' as any;
+
 const teamMembers = [
   {
     id: 1,
@@ -56,7 +58,14 @@ const Team = () => {
             <div className="section-layer-div">
               <div className="section-layer-1 is-relative">
                 <div className="max-width _90">
-                  <div data-loading="lazy" data-preserve-aspect-ratio="xMidYMid slice" data-is-ix2-target="1" className="lottie" data-w-id="3d32f347-faca-63d9-5a57-93ec78c2c77f" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/68405e9ce713fe96af235272_Ondevi%20Team%20Section%201080%2060fps_2.lottie" data-loop="1" data-direction="1" data-autoplay="0" data-renderer="canvas" data-default-duration="0" data-duration="0" data-default-src="https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/68405e9ce713fe96af235272_Ondevi%20Team%20Section%201080%2060fps_2.lottie" style={{ overflow: "hidden" }} data-state="playing"><canvas width="2400" height="1375" style={{ width: "100%", height: "100%", transformOrigin: "0px 0px 0px", contentVisibility: "visible" }}></canvas></div>
+                  <DotLottiePlayer
+                    src="https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/68405e9ce713fe96af235272_Ondevi%20Team%20Section%201080%2060fps_2.lottie"
+                    background="transparent"
+                    speed="1"
+                    loop
+                    autoplay
+                    style={{ width: "100%", height: "auto" }}
+                  />
                 </div>
               </div>
               <div className="section-layer-2 is-absolute" style={{ willChange: "opacity", opacity: 0 }}>

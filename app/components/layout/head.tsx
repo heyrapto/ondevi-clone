@@ -34,6 +34,10 @@ export const Head = () => {
         type="text/css" 
         href="https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/css/ondevi.webflow.shared.c11fdba6c.min.css" 
       />
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+      />
       <link 
         rel="shortcut icon" 
         type="image/x-icon" 
