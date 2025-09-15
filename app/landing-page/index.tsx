@@ -15,6 +15,9 @@ import Presentation from "~/components/sections/presentation";
 import Steps from "~/components/sections/steps";
 import Team from "~/components/sections/team";
 import LenisReact from "lenis/react";
+import {gsap}  from "gsap"
+import {ScrollTrigger} from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger);
 
 export function LandingPage() {
   return (
