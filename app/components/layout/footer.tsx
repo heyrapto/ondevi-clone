@@ -1,3 +1,36 @@
+import { useEffect } from 'react';
+
+const LinkedInTracking = () => {
+  useEffect(() => {
+    // LinkedIn tracking code
+    const _linkedin_partner_id = "2478796";
+    (window as any)._linkedin_data_partner_ids = (window as any)._linkedin_data_partner_ids || [];
+    (window as any)._linkedin_data_partner_ids.push(_linkedin_partner_id);
+
+    // LinkedIn insight script
+    (function(l: any) {
+      if (!l) {
+        (window as any).lintrk = function(a: any, b: any) {
+          (window as any).lintrk.q.push([a, b])
+        };
+        (window as any).lintrk.q = []
+      }
+      const s = document.getElementsByTagName("script")[0];
+      const b = document.createElement("script");
+      b.type = "text/javascript";
+      b.async = true;
+      b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode?.insertBefore(b, s);
+    })((window as any).lintrk);
+  }, []);
+
+  return (
+    <noscript>
+      <img height="1" width="1" style={{display: 'none'}} alt="" src="https://px.ads.linkedin.com/collect/?pid=2478796&fmt=gif" />
+    </noscript>
+  );
+};
+
 const footerData = {
   company: {
     logo: "https://cdn.prod.website-files.com/680794a92c0d51ed197aec0e/680797fe17c908d6a6cc15bb_logo_light.svg",
@@ -118,36 +151,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="embed w-embed w-script">
-              <script type="text/javascript">
-                {`
-                  _linkedin_partner_id = "2478796";
-                  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-                  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-                `}
-              </script>
-              <script type="text/javascript">
-                {`
-                  (function(l) {
-                    if (!l) {
-                      window.lintrk = function(a, b) {
-                        window.lintrk.q.push([a, b])
-                      };
-                      window.lintrk.q = []
-                    }
-                    var s = document.getElementsByTagName("script")[0];
-                    var b = document.createElement("script");
-                    b.type = "text/javascript";
-                    b.async = true;
-                    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-                    s.parentNode.insertBefore(b, s);
-                  })(window.lintrk);
-                `}
-              </script>
-              <noscript>
-                <img height="1" width="1" style={{display: 'none'}} alt="" src="https://px.ads.linkedin.com/collect/?pid=2478796&fmt=gif" />
-              </noscript>
-            </div>
+            <LinkedInTracking />
           </div>
         </div>
       </div>
