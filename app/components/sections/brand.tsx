@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import {gsap} from "gsap"
 
 const clientLogos = [
   {
@@ -66,22 +65,36 @@ const clientLogos = [
 
 const Brand = () => {
     useEffect(() => {
-      gsap.from(".cms-item", {
-          scrollTrigger: {
-              trigger: ".grid",
-              start: "top 70%",
-              toggleActions: "play none none none",
-          },
-          opacity: 0,
-          scale: 0.9,
-          filter: "blur(5px)", // Startwert
-          duration: 0.6,
-          stagger: {
-              amount: 0.6,
-              from: "start"
-          },
-          ease: "power2.out"
-      });
+      // Dynamically import GSAP only on client side
+      const initGSAP = async () => {
+        try {
+          const { gsap } = await import("gsap");
+          const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+          
+          gsap.registerPlugin(ScrollTrigger);
+          
+          gsap.from(".cms-item", {
+              scrollTrigger: {
+                  trigger: ".grid",
+                  start: "top 70%",
+                  toggleActions: "play none none none",
+              },
+              opacity: 0,
+              scale: 0.9,
+              filter: "blur(5px)", // Startwert
+              duration: 0.6,
+              stagger: {
+                  amount: 0.6,
+                  from: "start"
+              },
+              ease: "power2.out"
+          });
+        } catch (error) {
+          console.warn("Failed to load GSAP:", error);
+        }
+      };
+
+      initGSAP();
     }, []);
   return (
     <div className="default-section">

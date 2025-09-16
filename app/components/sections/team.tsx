@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { gsap } from "gsap"
 
 const DotLottiePlayer = 'dotlottie-player' as any;
 
