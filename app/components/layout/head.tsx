@@ -38,6 +38,39 @@ export const Head = () => {
         rel="stylesheet"
         href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
       />
+      
+      {/* Critical Webflow animation styles */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @media (min-width:992px) {
+            html.w-mod-js:not(.w-mod-ix) [data-w-id="410ddfbc-d6ca-0c4f-be67-425f0597b5bf"] {
+              -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+            }
+            html.w-mod-js:not(.w-mod-ix) [data-w-id="410ddfbc-d6ca-0c4f-be67-425f0597b5be"] {
+              -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+            }
+            html.w-mod-js:not(.w-mod-ix) [data-w-id="612ffabf-59ad-cfab-1bca-3da1e127f646"] {
+              -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+            }
+            html.w-mod-js:not(.w-mod-ix) [data-w-id="612ffabf-59ad-cfab-1bca-3da1e127f64b"] {
+              -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -moz-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              -ms-transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+              transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+            }
+          }
+        `
+      }} />
+      
       <link 
         rel="shortcut icon" 
         type="image/x-icon" 
@@ -69,6 +102,27 @@ export const Head = () => {
           `,
         }}
       />
+      
+      {/* Lenis smooth scroll styles */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          html.lenis {
+            height: auto;
+          }
+          .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+          }
+          .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+          }
+          .lenis.lenis-stopped {
+            overflow: hidden;
+          }
+          .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+          }
+        `
+      }} />
     </>
   );
 };

@@ -80,7 +80,7 @@ const Team = () => {
                     data-direction="1"
                     style={{ overflow: "hidden" }}
                   />
-                 <canvas width="2400" height="1375" style={{width: "100%", height: "100%", transformOrigin: "0px 0px 0px", contentVisibility: "visible"}}></canvas>
+                 {/* <canvas width="2400" height="1375" style={{width: "100%", height: "100%", transformOrigin: "0px 0px 0px", contentVisibility: "visible"}}></canvas> */}
                 </div>
               </div>
               <div className="section-layer-2 is-absolute" style={{ willChange: "opacity", opacity: 0 }}>

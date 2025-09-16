@@ -14,6 +14,22 @@ export const ExternalScripts = () => {
       });
     };
 
+    // Webflow w-mod-js detection (critical for animations)
+    const webflowDetectionScript = document.createElement('script');
+    webflowDetectionScript.type = 'text/javascript';
+    webflowDetectionScript.textContent = `
+      ! function(o, c) {
+        var n = c.documentElement,
+            t = " w-mod-";
+        n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
+      }(window, document);
+    `;
+    document.head.appendChild(webflowDetectionScript);
+
+    // jQuery (required for Webflow interactions)
+    loadScript('https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=680794a92c0d51ed197aec0e', false, false)
+      .catch(console.error);
+
     loadScript('https://www.googletagmanager.com/gtm.js?id=GTM-NTK84C6')
       .catch(console.error);
 
@@ -86,6 +102,17 @@ export const ExternalScripts = () => {
 
     // DotLottie web component for .lottie playback (needed when not relying on Webflow IX2)
     loadScript('https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js')
+      .catch(console.error);
+
+    // Lottie lazy loader
+    loadScript('https://cdn.jsdelivr.net/gh/athlonstudio/lottie-lazy-loader@latest/src/lottieLazyLoading.min.js')
+      .catch(console.error);
+
+    // Cookie consent scripts
+    loadScript('https://cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js')
+      .then(() => {
+        return loadScript('https://cdn.jsdelivr.net/gh/digital-sparks/cookie-consent-boost@1/dist/index.js');
+      })
       .catch(console.error);
 
   }, []);
