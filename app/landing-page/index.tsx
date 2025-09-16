@@ -14,64 +14,32 @@ import Insights from "~/components/sections/insights";
 import Presentation from "~/components/sections/presentation";
 import Steps from "~/components/sections/steps";
 import Team from "~/components/sections/team";
-import { useEffect, useState } from "react";
-
-const ClientOnlyWrapper = ({ children }: { children: React.ReactNode }) => {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) {
-    return <div className="global-body">{children}</div>;
-  }
-
-  return <LenisWrapper>{children}</LenisWrapper>;
-};
-
-const LenisWrapper = ({ children }: { children: React.ReactNode }) => {
-  useEffect(() => {
-    // Dynamically import Lenis and GSAP only on client side
-    const initClientSideFeatures = async () => {
-      try {
-        const LenisReact = (await import("lenis/react")).default;
-        const { gsap } = await import("gsap");
-        const { ScrollTrigger } = await import("gsap/ScrollTrigger");
-        
-        gsap.registerPlugin(ScrollTrigger);
-      } catch (error) {
-        console.warn("Failed to load client-side features:", error);
-      }
-    };
-
-    initClientSideFeatures();
-  }, []);
-
-  return <div className="global-body">{children}</div>;
-};
+import LenisReact from "lenis/react";
+import {gsap}  from "gsap"
+import {ScrollTrigger} from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger);
 
 export function LandingPage() {
   return (
     <>
       <Head />
-      <ClientOnlyWrapper>
-        <ExternalScripts />
-        <CookieConsentScripts />
-        <Navbar />
-        <Hero />
-        <Brand />
-        <Team />
-        <Presentation />
-        <Features />
-        <Chat />
-        <Insights />
-        <Ads />
-        <Steps />
-        <CTA />
-        <Footer />
-        <CookieBanner />
-      </ClientOnlyWrapper>
+      <LenisReact root>
+          <ExternalScripts />
+          <CookieConsentScripts />
+          <Navbar />
+          <Hero />
+          <Brand />
+          <Team />
+          <Presentation />
+          <Features />
+          <Chat />
+          <Insights />
+          <Ads />
+          <Steps />
+          <CTA />
+          <Footer />
+          <CookieBanner />
+      </LenisReact>
     </>
   )
 }
