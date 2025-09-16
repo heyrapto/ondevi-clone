@@ -34,7 +34,7 @@ const Presentation = () => {
               <div className="video w-embed">
                 <div id="video-container" style={{width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden'}}>
                   <video id="responsive-video" autoPlay loop muted playsInline preload="auto" style={{width: '100%', height: '100%', objectFit: 'cover'}}>
-                    <source src="https://storage.googleapis.com/ondevi.com/ondevi-Push-Pull-Google-Ads-FullSuite-Animation.mp4" />
+                    <source src="/videos/presentation.mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
